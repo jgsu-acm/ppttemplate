@@ -1,25 +1,4 @@
-\documentclass[10pt,aspectratio=169]{beamer}
-\usepackage{ctex}
-\usepackage{indentfirst}
-\usepackage{bookmark}
-\usepackage{etoolbox}
-
-% from https://tex.stackexchange.com/questions/17230/beamer-how-to-make-each-frame-appear-in-the-pdf-toc
-\makeatletter
-\let\nobookmarkbeamer@@frametitle\beamer@@frametitle
-\apptocmd{\beamer@@frametitle}{
-    \addtocontents{toc}{
-        \protect\beamer@subsectionintoc{\the\c@section}{0}{#1}{\the\c@page}{\the\c@part}{\the\beamer@tocsectionnumber}
-    }
-    \bookmark[page=\the\c@page,level=3]{#1}
-  }
-\makeatother
-
-\usetheme{Szeged}
-\usecolortheme{spruce}
-\usefonttheme[onlymath]{serif}
-
-\setlength{\parindent}{2em}
+\documentclass{pptt}
 
 \title{title}
 \author{ACM算法与微应用开发实验室 \and xxx}
