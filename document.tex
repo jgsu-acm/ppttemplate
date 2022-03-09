@@ -1,10 +1,19 @@
 \documentclass[10pt,aspectratio=169]{beamer}
 \usepackage{ctex}
 \usepackage{indentfirst}
+\usepackage{bookmark}
+\usepackage{etoolbox}
 
-\title{title}
-\author{ACM算法与微应用开发实验室 \and xxx}
-\date{yyyy年mm月dd日}
+% from https://tex.stackexchange.com/questions/17230/beamer-how-to-make-each-frame-appear-in-the-pdf-toc
+\makeatletter
+\let\nobookmarkbeamer@@frametitle\beamer@@frametitle
+\apptocmd{\beamer@@frametitle}{
+    \addtocontents{toc}{
+        \protect\beamer@subsectionintoc{\the\c@section}{0}{#1}{\the\c@page}{\the\c@part}{\the\beamer@tocsectionnumber}
+    }
+    \bookmark[page=\the\c@page,level=3]{#1}
+  }
+\makeatother
 
 \usetheme{Szeged}
 \usecolortheme{spruce}
@@ -12,11 +21,27 @@
 
 \setlength{\parindent}{2em}
 
+\title{title}
+\author{ACM算法与微应用开发实验室 \and xxx}
+\date{yyyy年mm月dd日}
+
 \begin{document}
 \maketitle
 
-\begin{frame}{Section}{subsection}
+\section{Section1}
 
+\begin{frame}{Frame1}{subframe1}
+\end{frame}
+
+\begin{frame}{Frame2}{subframe2}
+\end{frame}
+
+\section{Section2}
+
+\begin{frame}{Frame3}{subframe3}
+\end{frame}
+
+\begin{frame}{Frame4}{subframe4}
 \end{frame}
 
 \end{document}
