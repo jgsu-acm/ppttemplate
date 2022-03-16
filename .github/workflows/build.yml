@@ -12,7 +12,6 @@ jobs:
         with:
           root_file: document.tex
           latexmk_use_xelatex: true
-          latexmk_shell_escape: true
 
       - name: Release Package
         uses: marvinpinto/action-automatic-releases@latest
