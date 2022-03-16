@@ -1,9 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{pptt}[2021/11/30 v1.0 Presentation Template document class for jgsu-acm]
 
-\LoadClass[10pt,aspectratio=169]{beamer}
+\LoadClass[10pt,aspectratio=169]{ctexbeamer}
 
-\RequirePackage{ctex}
 \RequirePackage{indentfirst}
 \RequirePackage{bookmark}
 \RequirePackage{etoolbox}
