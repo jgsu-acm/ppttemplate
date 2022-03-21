@@ -7,7 +7,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
 
-      - name: Build problem.tex
+      - name: Build
         uses: xu-cheng/latex-action@v2
         with:
           root_file: document.tex
